@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Identification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div style="background-color: #ffc800">
+    <div class="fw-bold" href="#" style="text-align: center; font-size: 40px; font-family: Verdana, Geneva, Tahoma, sans-serif; padding-inline-start: 5%;">SmartInternz Project</div>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img width="48" height="48" src="https://img.icons8.com/color-glass/48/dog.png" alt="dog"/>
+                </a>
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" style="background-color: #000000">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="{{ url_for('index') }}">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('about') }}">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('team') }}">TEAM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('feedback') }}">FEEDBACK</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <h2 style="padding-top: 10px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: justify;" class="bolder text-center">Dog Breed Prediction</h2>
+            <p style=" padding-top: 10px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: justify;">
+                The field of dog breed identification encompasses the utilization of machine-learning models to categorize dog images into 
+                specific breed classifications. This task is inherently intricate due to the vast array of dog breeds, each characterized 
+                by unique physical traits, including size, shape, coat color, and facial features. Deep learning algorithms play a pivotal 
+                role in this domain, learning to discern these distinctive features and patterns within images to make precise predictions 
+                regarding the breed of a given dog. In our approach, we employ the Transfer Learning technique, specifically utilizing the 
+                VGG19 Architecture for dog breed identification. This involves leveraging a pre-trained neural network on a large dataset to 
+                enhance the model's ability to recognize intricate features. A substantial dataset is essential, encompassing labeled images 
+                of dogs representing diverse breeds, with each image accurately tagged with its corresponding breed. During the training phase, 
+                the model acquires the capacity to associate specific visual patterns and features with each breed. This process involves 
+                adjusting internal weights, optimizing the model's ability to accurately classify breeds. The implications of dog breed 
+                identification using machine learning extend beyond mere categorization. This technology can prove invaluable in supporting 
+                veterinarians by aiding in the diagnosis and treatment of specific breeds. Furthermore, it empowers dog owners by offering 
+                insights that enhance their understanding of their pets. In the realm of dog-related services, such as adoption, breeding, and 
+                training, machine learning-based breed identification holds significant promise. Additionally, the field contributes to broader 
+                scientific endeavors, facilitating research into the genetic and phenotypic characteristics that distinguish various dog breeds.
+            </p>
+
+
+    <footer class="footer">
+        <a href="#" target="_blank">
+            <img src="github-logo.png" alt="GitHub">
+        </a>
+        <!-- Add more links as needed -->
+    </footer>
+    <script src="/static/bootstrap.js"></script>
+</body>
+</html>

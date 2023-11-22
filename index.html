@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Identification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div style="background-color: #ffc800">
+        <div class="fw-bold" href="#" style="text-align: center; font-size: 40px; font-family: Verdana, Geneva, Tahoma, sans-serif; padding-inline-start: 5%;">SmartInternz Project</div>
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-dark navbar-light">
+                    <a class="navbar-brand" href="#">
+                        <img width="48" height="48" src="https://img.icons8.com/color-glass/48/dog.png" alt="dog"/>
+                    </a>
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" style="background-color: #000000">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                            <li class="nav-item active">
+                                <a class="nav-link" aria-current="page" href="{{ url_for('index') }}">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('about') }}">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('team') }}">TEAM</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('feedback') }}">FEEDBACK</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <div class="title">
+                    <h1 class="display-4 text-center">Dog Breed Prediction</h1>
+                </div>
+
+                <div class="container upload-box">
+                    <form method="POST" action="/predict" enctype="multipart/form-data">
+                        <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
+                        <br>
+                        <button type="submit">Predict Breed</button>
+                    </form>
+                </div>
+
+                {% if prediction %}
+                    <div class="result-container">
+                        <p style="font-weight: bolder;">Prediction: {{ prediction }}</p>
+                        {% if image_path %}
+                            <img src="{{ image_path }}" alt="Inputted Image" style="width: 20%;">
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <footer class="footer">
+            <a href="#" target="_blank">
+                <img src="github-logo.png" alt="GitHub">
+            </a>
+            <!-- Add more links as needed -->
+        </footer>
+    </div>
+    <script src="/static/bootstrap.js"></script>
+</body>
+</html>
